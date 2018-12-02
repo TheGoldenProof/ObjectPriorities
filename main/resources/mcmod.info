@@ -1,0 +1,16 @@
+[
+{
+  "modid": "objectpriorities",
+  "name": "ObjectPriorities",
+  "description": "Allows you to give items and blocks an object priority. By default, your Object Control Authority is your SimpleRPG level, but can be changed to your Minecraft level in config. Slowness will be applied based on how far below the required level you fall.",
+  "version": "1.1",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["TheGoldenProof"],
+  "credits": "Me for making my other mod that gave me the idea to split the object priorities into a different mod to make other items beside my own have object priorities, and Reki Kawahara for coming up with the idea of Object Priorities and Object Control Authorities in Sword Art Online: Alicization, and most importantly ProjectE for the entire system of the way everything works.",
+  "logoFile": "assets/objectpriorities/logo/logo.png",
+  "screenshots": [],
+  "dependencies": ["simplerpg"]
+}
+]
