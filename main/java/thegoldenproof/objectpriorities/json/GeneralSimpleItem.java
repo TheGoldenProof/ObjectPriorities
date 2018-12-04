@@ -34,13 +34,8 @@ public interface GeneralSimpleItem {
 
 		@Override
 		public GeneralSimpleItem deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-//			JsonPrimitive json2 = json.getAsJsonPrimitive();
-//			JsonElement json3 = json2.
-//			
-//			String s = json3.getAsString();
 			
 			String s = json.getAsString();
-			ObjectPriorities.info(json);
 						
 			if (s.startsWith("OD|")) {
 				return GSIOreDict.create(s.substring("OD|".length()));

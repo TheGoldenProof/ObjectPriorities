@@ -1,4 +1,4 @@
-package thegoldenproof.objectpriorities.simplerpg;
+package thegoldenproof.objectpriorities.events;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
