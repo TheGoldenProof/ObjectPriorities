@@ -34,7 +34,7 @@ public class TooltipEvent {
 			int priority = PriorityHelper.getPriority(current);
 			EntityPlayer clientPlayer = Minecraft.getMinecraft().player;
 			
-			event.getToolTip().add(TextFormatting.GRAY + I18n.format("op.priority.priority_tooltip_prefix") + " " + /*TextFormatting.WHITE +*/ FORMATTER.format(priority));
+			event.getToolTip().add(TextFormatting.LIGHT_PURPLE + I18n.format("op.priority.priority_tooltip_prefix") + " " + /*TextFormatting.WHITE +*/ FORMATTER.format(priority));
 			
 		}
 		
