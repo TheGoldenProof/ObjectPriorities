@@ -23,6 +23,9 @@ public class LivingUpdateEventHandler {
 	
 	@SubscribeEvent
 	public static void heavyItems(LivingUpdateEvent event) {
+		double sFactor = ConfigFile.effectCalcs.slownessFactor;
+		double fFactor = ConfigFile.effectCalcs.fatigueFactor;
+		
 		EntityLivingBase entity = event.getEntityLiving();
 		if (entity instanceof EntityPlayerMP) {
 			EntityPlayerMP p = (EntityPlayerMP)(entity);
@@ -53,8 +56,8 @@ public class LivingUpdateEventHandler {
 			}
 			priority = currentHighest;
 			if (priority > level) {
-				p.addPotionEffect(new PotionEffect(Potion.getPotionFromResourceLocation("slowness"), 10, (int)(Math.ceil((priority-level)/10))));
-				p.addPotionEffect(new PotionEffect(Potion.getPotionFromResourceLocation("mining_fatigue"), 10, (int)(Math.ceil((priority-level)/10))));
+				p.addPotionEffect(new PotionEffect(Potion.getPotionFromResourceLocation("slowness"), 10, (int)(Math.ceil((priority-level)/sFactor))));
+				p.addPotionEffect(new PotionEffect(Potion.getPotionFromResourceLocation("mining_fatigue"), 10, (int)(Math.ceil((priority-level)/fFactor))));
 			}
 		}
 	}

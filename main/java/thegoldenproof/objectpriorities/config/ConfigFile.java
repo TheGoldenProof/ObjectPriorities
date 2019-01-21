@@ -13,4 +13,12 @@ public class ConfigFile {
 		public boolean useSimpleRPG = true;
 		
 	}
+	
+	public static EffectCalculations effectCalcs = new EffectCalculations();
+	public static class EffectCalculations {
+		@Config.Comment("Calculated like so: (priority-level)/x, where x is the factor. In easier terms, the level of slowness/fatigue is the difference between its and your level divided by this. (default: 10.0)")
+		public double fatigueFactor = 10;
+		public double slownessFactor = 10;
+	}
+	
 }
