@@ -106,14 +106,14 @@ public final class PriorityParser
 			return GSIOreDict.create(str);
 		}
 	}
-
-	public static boolean addToFile(String toAdd, int meta, int priority)
-	{
+	
+	public static boolean alwaysAddToFile(String toAdd, int meta, int priority) {
+		
 		GeneralSimpleItem gsi = getGsi(toAdd, meta);
 		PriorityEntry entry = new PriorityEntry(gsi, priority);
-
+		
 		int setAt = -1;
-
+		
 		for (int i = 0; i < currentEntries.entries.size(); i++)
 		{
 			if (currentEntries.entries.get(i).gsi.equals(gsi))
@@ -130,9 +130,33 @@ public final class PriorityParser
 		{
 			currentEntries.entries.set(setAt, entry);
 		}
-
+		
 		dirty = true;
 		return true;
+	}
+
+	public static boolean addToFile(String toAdd, int meta, int priority)
+	{
+		GeneralSimpleItem gsi = getGsi(toAdd, meta);
+		PriorityEntry entry = new PriorityEntry(gsi, priority);
+		
+		boolean flag = true;
+		for (int i = 0; i < currentEntries.entries.size(); i++) {
+			if (currentEntries.entries.get(i).gsi.equals(gsi)) {
+				if (currentEntries.entries.get(i).priority != priority && currentEntries.entries.get(i).priority != 0) {
+					flag = false;
+				} else {
+					flag = true;
+				}
+			}
+		}
+		
+		//ObjectPriorities.debug(flag);
+		
+		if (flag) {
+			return alwaysAddToFile(toAdd, meta, priority);
+		} else {return true;}
+		
 	}
 
 	public static boolean removeFromFile(String toRemove, int meta)

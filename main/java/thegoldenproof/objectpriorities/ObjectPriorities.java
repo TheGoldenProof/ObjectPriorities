@@ -28,7 +28,6 @@ public class ObjectPriorities {
 	
 	public static File CONFIG_DIR;
 	public static boolean simpleRPGLoaded = false;
-	//public static File PREGENERATED_PRIORITY_FILE;
 	
 	@Instance
 	public static ObjectPriorities instance;

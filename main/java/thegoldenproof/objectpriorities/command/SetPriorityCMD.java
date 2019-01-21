@@ -103,7 +103,7 @@ public class SetPriorityCMD extends CommandBase {
 			
 		}
 		
-		if (PriorityParser.addToFile(name, meta, priority))
+		if (PriorityParser.alwaysAddToFile(name, meta, priority))
 		{
 			sender.sendMessage(new TextComponentTranslation("op.command.set.success", name, priority));
 			sender.sendMessage(new TextComponentTranslation("op.command.reload.notice"));
